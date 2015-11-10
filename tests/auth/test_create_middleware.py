@@ -93,6 +93,7 @@ class TestMiddleware(base.TestCase):
         req.reset_mock()
 
         i.identify.return_value = True
+        i.challenge = 'test'
         a.authenticate.return_value = True
 
         m = middleware.Middleware([i], [a], None, delay_401=True,

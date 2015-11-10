@@ -30,6 +30,8 @@ class Identifier(interfaces.Identifies):
     None.
     """
 
+    challenge = 'Header'
+
     def __init__(self, **conf):
         """
         Construct a concrete object with a set of keyword configuration

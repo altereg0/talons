@@ -38,6 +38,8 @@ class Identifier(interfaces.Identifies):
     :see http://en.wikipedia.org/wiki/Basic_access_authentication
     """
 
+    challenge = 'Basic'
+
     def identify(self, request):
         if request.env.get(self.IDENTITY_ENV_KEY) is not None:
             return True

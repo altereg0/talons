@@ -77,14 +77,17 @@ class Middleware(object):
         self.delay_401 = conf.get('delay_401', False)
         self.delay_403 = conf.get('delay_403', False)
         self.default_authorize = conf.get('default_authorize', False)
+        self.challenge = (identifier.challenge for identifier in identifiers) or ''
 
     def raise_401_no_identity(self):
         raise falcon.HTTPUnauthorized('Authentication required',
-                                      'No identity information found.')
+                                      'No identity information found.',
+                                      self.challenge)
 
     def raise_401_fail_authenticate(self):
         raise falcon.HTTPUnauthorized('Authentication required',
-                                      'Authentication failed.')
+                                      'Authentication failed.',
+                                      self.challenge)
 
     def raise_403(self):
         raise falcon.HTTPForbidden('Action not allowed',
