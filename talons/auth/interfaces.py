@@ -183,7 +183,7 @@ class Authorizes(object):
         """
         pass
 
-    def authorize(self, identity, resource, action):
+    def authorize(self, identity, resource):
         """
         Looks at the supplied identity object and returns True if the
         identity has the authority to perform the supplied action against
@@ -194,7 +194,5 @@ class Authorizes(object):
         :param resource: A `talons.resource.Resource` object that describes the
                          resource that the identity is attempting to perform
                          the action against.
-        :param action: A string describing the action that should be checked
-                       for authorization.
         """
         raise NotImplementedError  # pragma: NO COVER
