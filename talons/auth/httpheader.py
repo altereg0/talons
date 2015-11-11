@@ -78,7 +78,7 @@ class Identifier(interfaces.Identifies):
                     msg = ("Found blacklisted attr name {0} in "
                            "httpheader configuration. "
                            "Stripping.").format(attr)
-                    LOG.warn(msg)
+                    LOG.warning(msg)
                     continue
                 self.attr_headers[attr] = v
 
