@@ -16,7 +16,6 @@
 
 
 class Identity(object):
-
     """
     Concrete class that exposes identity information as well as
     credentials and authorization information (like roles and group
@@ -31,7 +30,6 @@ class Identity(object):
 
 
 class ResourceAction(object):
-
     """
     Concrete class that exposes identity information as well as
     credentials and authorization information (like roles and group
@@ -89,7 +87,6 @@ class ResourceAction(object):
 
 
 class Identifies(object):
-
     """
     Base class for plugins that act to identify the requesting user,
     possibly by inspecting headers in the incoming HTTP request or
@@ -121,7 +118,6 @@ class Identifies(object):
 
 
 class Authenticates(object):
-
     """
     Base class for plugins that act to authenticate the identified credentials
     """
@@ -164,7 +160,6 @@ class Authenticates(object):
 
 
 class Authorizes(object):
-
     """
     Base class for plugins that act to authorize an identity to perform
     an action against a particular resource.
